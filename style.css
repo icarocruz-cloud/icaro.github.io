@@ -4,7 +4,7 @@ body {
   font-family: "Comic Sans MS", sans-serif;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 20px;
 
   background: linear-gradient(135deg, #ffb6c1, #ffd1dc, #b5eaea, #fcd5ce);
   background-size: 400% 400%;
@@ -19,23 +19,23 @@ body {
 
 /* ===== Quadro ===== */
 #slider {
-  width: 90%;
-  max-width: 600px;
+  width: 95%;
+  max-width: 480px; /* DIMINUI PARA CABER MELHOR */
   background: white;
-  padding: 25px;
+  padding: 18px;    /* mais compacto */
   border-radius: 25px;
   box-shadow: 0 0 25px rgba(0,0,0,0.15);
   overflow: hidden;
 }
 
-/* ===== Página — animação lenta ===== */
+/* ===== Página ===== */
 .page {
   display: none;
   flex-direction: column;
   align-items: center;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1.8s ease, transform 1.8s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .page.active {
@@ -47,13 +47,13 @@ body {
 /* ===== Imagem ===== */
 .page img {
   width: 100%;
-  max-width: 380px;
+  max-width: 260px; /* REDUZIDO PARA CABER MELHOR */
   border-radius: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity 1.8s ease, transform 1.8s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .page.active img {
@@ -63,15 +63,15 @@ body {
 
 /* ===== Texto ===== */
 .page p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  padding: 0 10px;
+  font-size: 0.95rem; /* MENOR PARA CABER MAIS TEXTO */
+  line-height: 1.45;
+  margin-bottom: 25px;
+  padding: 0 8px;
   text-align: center;
 
   opacity: 0;
   transform: translateY(15px);
-  transition: opacity 1.8s ease, transform 1.8s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .page.active p {
@@ -79,23 +79,23 @@ body {
   transform: translateY(0);
 }
 
-/* ===== Controle dos Botões — sempre dentro do quadro ===== */
+/* ===== Controles ===== */
 #controls {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 /* ===== Botões ===== */
 #controls button {
-  width: 55px;
-  height: 55px;
+  width: 48px;   /* menores */
+  height: 48px;
   border-radius: 50%;
   border: none;
   background: #ff4fa3;
   color: white;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
 
@@ -116,4 +116,27 @@ body {
 #controls button:active {
   transform: scale(0.92);
 }
+
+/* ===== Responsividade EXTRA (celular pequeno) ===== */
+@media (max-width: 420px) {
+  #slider {
+    max-width: 90%;
+    padding: 14px;
+  }
+
+  .page img {
+    max-width: 220px;
+  }
+
+  .page p {
+    font-size: 0.9rem;
+  }
+
+  #controls button {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+}
   
+
