@@ -21,14 +21,14 @@ body {
   padding: 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 img {
   max-width: 50%;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
