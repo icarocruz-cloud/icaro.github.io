@@ -22,21 +22,31 @@ body {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
 
 img {
   max-width: 50%;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 h2 {
   margin-top: 20px;
   color: #ff69b4;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 p {
   font-size: 1.2em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 button {
@@ -53,4 +63,21 @@ button {
 
 button:hover {
   background-color: #ff85c1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  img {
+    max-width: 80%;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+  }
 }
