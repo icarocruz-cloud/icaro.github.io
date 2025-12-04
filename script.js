@@ -13,64 +13,40 @@ function updatePageContent() {
   const photoElement = document.getElementById("photo");
   const titleElement = document.getElementById("title");
   const textElement = document.getElementById("text");
-  const buttonElement = document.getElementById("nextButton");  // Pegando o botão pelo ID
+  const buttonElement = document.getElementById("nextButton");
 
-  // Remover a classe de animação do conteúdo atual (se houver)
+  // Garantir que a imagem e o texto apareçam corretamente
   photoElement.style.opacity = 0;
-  photoElement.style.transform = 'scale(0.9)';
   titleElement.style.opacity = 0;
-  titleElement.style.transform = 'translateY(-20px)';
   textElement.style.opacity = 0;
-  textElement.style.transform = 'translateY(20px)';
 
-  // Atualiza o conteúdo após um pequeno atraso para deixar a transição de saída acontecer
+  // Atualiza o conteúdo após 500ms para dar tempo da animação
   setTimeout(() => {
-    // Atualiza a imagem, título e texto
     photoElement.src = pages[currentPage].img;
     titleElement.textContent = pages[currentPage].title;
     textElement.textContent = pages[currentPage].text;
 
-    // Atualiza o botão: se for a última página, muda o texto para "Voltar ao Início"
+    // Atualizar o botão: Se for a última página, mudar para "Voltar ao Início"
     if (currentPage === pages.length - 1) {
       buttonElement.textContent = "Voltar ao Início";
     } else {
       buttonElement.textContent = "Próximo";
     }
 
-    // Agora, faz a transição de entrada do novo conteúdo
+    // Transição suave de entrada
     photoElement.style.opacity = 1;
-    photoElement.style.transform = 'scale(1)';
     titleElement.style.opacity = 1;
-    titleElement.style.transform = 'translateY(0)';
     textElement.style.opacity = 1;
-    textElement.style.transform = 'translateY(0)';
-  }, 1000); // Tempo para a transição de saída, em milissegundos
+
+  }, 500);
 }
 
 // Função para ir para a próxima página ou voltar ao início
 function nextPage() {
-  const buttonElement = document.getElementById("nextButton");
-
-  // Verifica se o botão está com o texto "Voltar ao Início"
-  if (buttonElement.textContent === "Voltar ao Início") {
-    currentPage = 0;  // Volta ao início
-  } else {
-    // Aumenta o número da página
-    currentPage++;
-    if (currentPage >= pages.length) {
-      currentPage = 0; // Volta para a primeira página após a última
-    }
-  }
-
-  // Atualiza o conteúdo da página
-  updatePageContent();
-}
-
-// Carregar o conteúdo da primeira página ao carregar a página
-updatePageContent();
+  const buttonElement = document.getElement
+ 
 
 
-updatePageContent();
 
 
 
